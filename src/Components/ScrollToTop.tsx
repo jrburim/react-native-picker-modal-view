@@ -20,10 +20,7 @@ export class ScrollToTopComponent extends React.PureComponent<
 				<TouchableOpacity
 					onPress={() => goToUp()}
 					activeOpacity={0.8}
-					style={[
-						ScrollToTopStyle.container,
-						{ backgroundColor: "#FFFFFF00", bottom: 70 },
-					]}
+					style={[ScrollToTopStyle.container]}
 				>
 					<Icon
 						name={"ios-caret-up-circle-outline"}
