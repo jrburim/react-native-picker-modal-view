@@ -1,19 +1,24 @@
-import * as React from 'react';
-import { View, TextInput, TouchableOpacity, Image } from 'react-native';
-import { SearchStyle } from '../Assets/Styles';
+import * as React from "react";
+import { View, TextInput, TouchableOpacity, PlatformColor } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
+import { SearchStyle } from "../Assets/Styles";
 export class SearchComponent extends React.PureComponent {
     render() {
-        const { SearchInputProps, placeholderTextColor, onClose, setText, forceSelect, searchText, onBackRequest, backButtonDisabled } = this.props;
+        const { SearchInputProps, placeholderTextColor, onClose, setText, forceSelect, searchText, onBackRequest, backButtonDisabled, } = this.props;
         return (React.createElement(View, { style: SearchStyle.searchArea },
             !backButtonDisabled &&
-                this.touchableOpacityButton(onBackRequest, require('../Assets/Images/left-arrow.png'), SearchStyle.leftBtn, SearchStyle.backButton),
-            React.createElement(TextInput, Object.assign({ placeholder: searchText, placeholderTextColor: placeholderTextColor, style: [SearchStyle.textInput, forceSelect && SearchStyle.nonCloseButton, backButtonDisabled && SearchStyle.nonBackButton], underlineColorAndroid: 'transparent', onChangeText: (text) => setText(text) }, SearchInputProps)),
+                this.touchableOpacityButton(onBackRequest, "ios-arrow-back", SearchStyle.leftBtn, SearchStyle.backButton),
+            React.createElement(TextInput, Object.assign({ placeholder: searchText, placeholderTextColor: placeholderTextColor, style: [
+                    SearchStyle.textInput,
+                    forceSelect && SearchStyle.nonCloseButton,
+                    backButtonDisabled && SearchStyle.nonBackButton,
+                ], underlineColorAndroid: "transparent", onChangeText: (text) => setText(text) }, SearchInputProps)),
             !forceSelect &&
-                this.touchableOpacityButton(onClose, require('../Assets/Images/close.png'), SearchStyle.leftBtn, SearchStyle.closeButton)));
+                this.touchableOpacityButton(onClose, "ios-close", SearchStyle.leftBtn, SearchStyle.closeButton)));
     }
-    touchableOpacityButton(onPress, imgSrc, buttonStyle, imgStyle) {
+    touchableOpacityButton(onPress, nameIcon, buttonStyle, imgStyle) {
         return (React.createElement(TouchableOpacity, { onPress: () => onPress(), style: buttonStyle },
-            React.createElement(Image, { source: imgSrc, style: imgStyle })));
+            React.createElement(Icon, { name: nameIcon, color: PlatformColor("link"), size: 25 })));
     }
 }
 //# sourceMappingURL=Search.js.map

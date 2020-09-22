@@ -1,22 +1,38 @@
 // Global Imports
-import * as React from 'react';
-import { TouchableOpacity, Image } from 'react-native';
+import * as React from "react";
+import { TouchableOpacity, Image, PlatformColor } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
 
 // Local Imports
-import { ScrollToTopStyle } from '@Styles';
-import { IScrollToTop } from '@Interfaces';
+import { ScrollToTopStyle } from "@Styles";
+import { IScrollToTop } from "@Interfaces";
 
-export class ScrollToTopComponent extends React.PureComponent<IScrollToTop, {}> {
+//PlatformColor("systemBackground")
+
+export class ScrollToTopComponent extends React.PureComponent<
+	IScrollToTop,
+	{}
+> {
 	public render(): JSX.Element {
 		const { goToUp, stickyBottomButton } = this.props;
 		if (stickyBottomButton) {
 			return (
-				<TouchableOpacity onPress={() => goToUp()} activeOpacity={0.8} style={ScrollToTopStyle.container}>
-					<Image source={require('../Assets/Images/up.png')} style={ScrollToTopStyle.upBtn} />
+				<TouchableOpacity
+					onPress={() => goToUp()}
+					activeOpacity={0.8}
+					style={[
+						ScrollToTopStyle.container,
+						{ backgroundColor: "#FFFFFF00", bottom: 70 },
+					]}
+				>
+					<Icon
+						name={"ios-caret-up-circle-outline"}
+						color={PlatformColor("link")}
+						size={30}
+					/>
 				</TouchableOpacity>
 			);
 		}
-		return null
-
+		return null;
 	}
 }

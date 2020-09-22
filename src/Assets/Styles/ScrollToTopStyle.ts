@@ -1,17 +1,17 @@
 // Global Imports
-import { StyleSheet, ViewStyle, ImageStyle } from 'react-native';
+import { StyleSheet, ViewStyle, ImageStyle } from "react-native";
 
 export const ScrollToTopStyle = StyleSheet.create({
 	container: {
-		position: 'absolute',
-		bottom: 20,
+		position: "absolute",
+		bottom: 50,
 		right: 50,
-		backgroundColor: '#dfe4ea',
+		backgroundColor: "#FFFFFF00",
 		width: 40,
 		height: 40,
 		borderRadius: 40,
-		justifyContent: 'center',
-		alignItems: 'center',
+		justifyContent: "center",
+		alignItems: "center",
 	} as ViewStyle,
 	upBtn: {
 		width: 15,

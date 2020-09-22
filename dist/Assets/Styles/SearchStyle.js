@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, PlatformColor, } from "react-native";
 export const SearchStyle = StyleSheet.create({
     closeButton: {
         width: 13,
@@ -9,18 +9,18 @@ export const SearchStyle = StyleSheet.create({
         height: 15,
     },
     searchArea: {
-        flexDirection: 'row',
-        alignContent: 'center',
-        alignItems: 'center',
-        justifyContent: 'space-between',
+        flexDirection: "row",
+        alignContent: "center",
+        alignItems: "center",
+        justifyContent: "space-between",
         paddingVertical: 10,
     },
     textInput: {
         flex: 1,
-        borderColor: '#ccc',
+        borderColor: "#ccc",
         borderWidth: 0.5,
         borderRadius: 5,
-        color: '#000',
+        color: PlatformColor("label"),
         padding: 10,
     },
     nonCloseButton: {

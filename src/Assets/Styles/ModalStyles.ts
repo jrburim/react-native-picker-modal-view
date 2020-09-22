@@ -1,19 +1,20 @@
 // Global Imports
-import { StyleSheet, ViewStyle } from 'react-native';
+//@ts-ignore
+import { StyleSheet, ViewStyle, PlatformColor } from "react-native";
 
 // Local Imports
 
 export const ModalStyles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#fff',
+		backgroundColor: PlatformColor("systemBackground"),
 	} as ViewStyle,
 	listArea: {
 		flex: 1,
-		flexDirection: 'row',
+		flexDirection: "row",
 	} as ViewStyle,
 	keyboardContainer: {
 		flex: 1,
-		flexDirection: 'row',
+		flexDirection: "row",
 	} as ViewStyle,
 });
