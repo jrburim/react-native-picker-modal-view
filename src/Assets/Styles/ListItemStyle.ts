@@ -17,7 +17,7 @@ export const ListItemStyle = StyleSheet.create({
 		marginRight: 10,
 		paddingVertical: 15,
 		borderBottomWidth: 0.5,
-		borderBottomColor: "rgba(0,0,0,.05)",
+		borderBottomColor: PlatformColor("systemGray6"),
 	} as ViewStyle,
 	itemTextStyle: {
 		color: PlatformColor("label"),

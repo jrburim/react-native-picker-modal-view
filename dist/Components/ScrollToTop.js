@@ -6,10 +6,7 @@ export class ScrollToTopComponent extends React.PureComponent {
     render() {
         const { goToUp, stickyBottomButton } = this.props;
         if (stickyBottomButton) {
-            return (React.createElement(TouchableOpacity, { onPress: () => goToUp(), activeOpacity: 0.8, style: [
-                    ScrollToTopStyle.container,
-                    { backgroundColor: "#FFFFFF00", bottom: 70 },
-                ] },
+            return (React.createElement(TouchableOpacity, { onPress: () => goToUp(), activeOpacity: 0.8, style: [ScrollToTopStyle.container] },
                 React.createElement(Icon, { name: "ios-caret-up-circle-outline", color: PlatformColor("link"), size: 30 })));
         }
         return null;
